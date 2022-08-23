@@ -2086,7 +2086,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7813665, y: 1}
+    m_SensorSize: {x: 2.7146018, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2537,6 +2537,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7865744600979927756, guid: 3eba1b2c6a761fb4fa96c74312c96713, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6027ad5ba00ed8f4ea8938b5a42d176b, type: 2}
+    - target: {fileID: 7865744600979927756, guid: 3eba1b2c6a761fb4fa96c74312c96713, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7865744600987304204, guid: 3eba1b2c6a761fb4fa96c74312c96713, type: 3}
       propertyPath: m_Name
       value: bombero
