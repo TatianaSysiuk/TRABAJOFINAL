@@ -39,7 +39,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && canJump)
         {
             canJump = false;
-            // playerDirection += Vector3.up * 50;
+            playerDirection += Vector3.up * 50;
         }
 
         if (applyGravity) playerDirection += Vector3.down;
@@ -57,11 +57,10 @@ public class PlayerMove : MonoBehaviour
             }
 
         }
+    }
 
         void MovePlayer(Vector3 direction)
         {
             transform.Translate(direction * speed * Time.deltaTime);
         }
-    }
-
-    }
+}
