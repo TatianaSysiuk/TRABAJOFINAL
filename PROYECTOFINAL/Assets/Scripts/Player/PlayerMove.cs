@@ -11,33 +11,22 @@ public class PlayerMove : MonoBehaviour
     private bool canJump = true;
     public bool CanJump { get => canJump; set => canJump = value; }
 
-    [SerializeField] private int JumpHeight = 4;
+    /*[SerializeField] private int JumpHeight = 4;
 
 
-    private bool applyGravity = false;
+    private bool applyGravity = false;*/
     private Vector3 playerDirection;
 
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
 
         if (Input.GetKey(KeyCode.D))
-        {
             MovePlayer(Vector3.forward);
-        }
 
         if (Input.GetKey(KeyCode.A))
-        {
             MovePlayer(Vector3.back);
-        }
 
-        if (Input.GetKeyDown(KeyCode.Space) && canJump)
-        {
+        /*if (Input.GetKeyDown(KeyCode.Space) && canJump){
             canJump = false;
             playerDirection += Vector3.up * 50;
         }
@@ -56,11 +45,10 @@ public class PlayerMove : MonoBehaviour
                 applyGravity = true;
             }
 
-        }
+        }*/
     }
 
-        void MovePlayer(Vector3 direction)
-        {
-            transform.Translate(direction * speed * Time.deltaTime);
-        }
+    void MovePlayer(Vector3 direction){
+        transform.Translate(direction * speed * Time.deltaTime);
+    }
 }
