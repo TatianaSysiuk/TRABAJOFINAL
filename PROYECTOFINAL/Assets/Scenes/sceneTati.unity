@@ -303,7 +303,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107035521}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.030039983, y: 0.010025436, z: 0.0006646326}
@@ -316,7 +316,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107035522}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.009996347, y: 0.010008968, z: 0.0006061996}
@@ -2086,7 +2086,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.7146018, y: 1}
+    m_SensorSize: {x: 2.3918128, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2689,7 +2689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  JumpHeight: 4
+  playerAnimator: {fileID: 5112123587984060113}
 --- !u!54 &5112123587984060112
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2706,6 +2706,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!95 &5112123587984060113 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7865744600979927756, guid: 3eba1b2c6a761fb4fa96c74312c96713, type: 3}
+  m_PrefabInstance: {fileID: 3159649364174140388}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6801986613151733745
 PrefabInstance:
   m_ObjectHideFlags: 0
