@@ -6,13 +6,13 @@ public class platformController : MonoBehaviour {
     public Rigidbody platformRB;
     public Transform[] platformPositions;
     
-    [SerializeField] [Range(0.2f,5f)] private float platformSpeed = 1f;
+    [SerializeField] [Range(2f,8f)] private float platformSpeed = 6f;
 
     private int actualPosition = 0;
     private int nextPosition = 1;
 
     public bool moveNext = true;
-    public float waitTime;
+    [SerializeField] [Range(1f,10f)] private float waitTime = 1f;
 
     private void Update() {
         Move();
@@ -28,7 +28,7 @@ public class platformController : MonoBehaviour {
     
         if (Vector3.Distance(platformRB.position, platformPositions[nextPosition].position) <= 0){
             
-            StopCoroutine(WaitForMove(waitTime));
+            StartCoroutine(WaitForMove(waitTime));
             actualPosition = nextPosition;
             nextPosition++;
 
