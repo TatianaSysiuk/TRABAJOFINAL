@@ -1,9 +1,8 @@
-# TRABAJOFINAL
-team: _ Paola Vicente
-      _Tatiana Sysiuk
-
-
+# TRABAJOFINAL - Curso Desarrollo de Videojuegos Coderhouse
+Integrantes:
+- Paola Vicente
+- Tatiana Sysiuk
 
 Tools:
 
- Unity Engine 2021.3.7f1 -- debemos actualizar a 2021.3.5f1 -- estará dicha actualización el día 31/8 aprox
+ - Unity Engine 2021.3.5f1
