@@ -6,4 +6,4 @@ team: _ Paola Vicente
 
 Tools:
 
- Unity Engine 2021.3.7f1
+ Unity Engine 2021.3.7f1 -- debemos actualizar a 2021.3.5f1 -- estará dicha actualización el día 31/8 aprox
