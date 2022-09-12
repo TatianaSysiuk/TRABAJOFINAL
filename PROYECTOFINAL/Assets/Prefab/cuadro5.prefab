@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 544691740154365147}
   m_Layer: 0
-  m_Name: cuadro2
+  m_Name: cuadro5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c1049f3c7fcf31a45bf1bf4e41a5afe8, type: 2}
+  - {fileID: 2100000, guid: 5a6cb48c9a5f47a4caadc3593b4d777a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
