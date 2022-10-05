@@ -41,7 +41,7 @@ public class PlayerMove : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && canJump){
+       if (Input.GetKeyDown(KeyCode.Space) && canJump){
             canJump = false;
             playerDirection += Vector3.up * 50;
         }
