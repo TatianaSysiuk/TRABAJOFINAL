@@ -3246,66 +3246,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3289145152456530604, guid: aeacfb684752de943b4c1cdb0ec08e7f, type: 3}
   m_PrefabInstance: {fileID: 498652454}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &527006999
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 527007001}
-  - component: {fileID: 527007000}
-  - component: {fileID: 527007002}
-  m_Layer: 0
-  m_Name: Pies
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!136 &527007000
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 527006999}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.57912445
-  m_Height: 1.2568347
-  m_Direction: 1
-  m_Center: {x: 0.003061969, y: 0.4269988, z: 1.6821662e-11}
---- !u!4 &527007001
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 527006999}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2016145415}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &527007002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 527006999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9509ca5189e344479d043bb241697a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerJump: {fileID: 2016145416}
 --- !u!1001 &534380023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4356,6 +4296,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 527007002, guid: 3eba1b2c6a761fb4fa96c74312c96713, type: 3}
+      propertyPath: playerJump
+      value: 
+      objectReference: {fileID: 2016145416}
     - target: {fileID: 564130507, guid: 3eba1b2c6a761fb4fa96c74312c96713, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.64
@@ -4889,7 +4833,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.014706, y: 1}
+    m_SensorSize: {x: 2.141115, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -10939,11 +10883,6 @@ CapsuleCollider:
   m_Height: 4.3
   m_Direction: 1
   m_Center: {x: 0, y: 1.69, z: 0}
---- !u!4 &2016145415 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7865744600987344172, guid: 3eba1b2c6a761fb4fa96c74312c96713, type: 3}
-  m_PrefabInstance: {fileID: 646855905}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2016145416
 MonoBehaviour:
   m_ObjectHideFlags: 0
