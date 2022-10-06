@@ -4400,7 +4400,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2016145414, guid: 3eba1b2c6a761fb4fa96c74312c96713, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3eba1b2c6a761fb4fa96c74312c96713, type: 3}
 --- !u!1001 &662365564
 PrefabInstance:
@@ -4833,7 +4834,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.141115, y: 1}
+    m_SensorSize: {x: 2.0213816, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -10880,9 +10881,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.62
-  m_Height: 4.3
+  m_Height: 4.0395737
   m_Direction: 1
-  m_Center: {x: 0, y: 1.69, z: 0}
+  m_Center: {x: 0, y: 1.8202133, z: 0}
 --- !u!114 &2016145416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11201,9 +11202,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1847535852}
     m_Modifications:
+    - target: {fileID: 851841325549589339, guid: fc7af38fdb4da8e4888d61c858fcdce7, type: 3}
+      propertyPath: m_TagString
+      value: piso
+      objectReference: {fileID: 0}
     - target: {fileID: 851841325582490960, guid: fc7af38fdb4da8e4888d61c858fcdce7, type: 3}
       propertyPath: m_Name
       value: EdificioA
+      objectReference: {fileID: 0}
+    - target: {fileID: 851841325961612618, guid: fc7af38fdb4da8e4888d61c858fcdce7, type: 3}
+      propertyPath: m_TagString
+      value: piso
       objectReference: {fileID: 0}
     - target: {fileID: 851841326424665478, guid: fc7af38fdb4da8e4888d61c858fcdce7, type: 3}
       propertyPath: m_LocalPosition.y
