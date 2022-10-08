@@ -7,6 +7,8 @@ public class PlayerCollision : MonoBehaviour{
     private PlayerData playerData;
     private PlayerMove playerMove;
 
+    private PlayerJump playerJump;
+
     private bool gameOverMessage = false;
 
     private float timer = 0f;
@@ -14,6 +16,7 @@ public class PlayerCollision : MonoBehaviour{
     private void Start() {
         playerData = GetComponent<PlayerData>();
         playerMove = GetComponent<PlayerMove>();
+        playerJump = GetComponent<PlayerJump>();
     }
 
     private void Update() {       
@@ -23,8 +26,16 @@ public class PlayerCollision : MonoBehaviour{
     private void OnCollisionEnter(Collision other) {
         Debug.Log("ENTRANDO EN COLISION CON ->" + other.gameObject.name); 
 
-        if (other.gameObject.CompareTag("Cat"))
-            SavedACatMessage(other);
+        switch (other.gameObject.tag){
+            case "Cat": SavedACatMessage(other);
+            break;
+            case "Star": ExtraLife(other);
+            break;
+            case "Platform": playerJump.puedoSaltar = false;
+            break;
+            default:
+            break;
+        }
         
     }
 
@@ -60,5 +71,12 @@ public class PlayerCollision : MonoBehaviour{
             Destroy(other.gameObject);
         }
         Debug.Log("Gatitos a salvar restantes: " + playerData.CatsToSave);
+    }
+
+    private void ExtraLife(Collision other){
+
+        Destroy(other.gameObject);
+        if (playerData.Lifes > 0 && playerData.Lifes < 5) 
+            playerData.PowerUp();
     }
 }

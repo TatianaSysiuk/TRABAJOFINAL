@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerData : MonoBehaviour {
-    [SerializeField] private int lifePoints = 2000;
+    [SerializeField] private int lifePoints = 1000;
     public int LifePoints { get { return lifePoints; } }
+
+    [SerializeField] private int lifes = 2;
+    public int Lifes { get { return lifes; } }
 
     private int catsToSave = 4;
     public int CatsToSave { get { return catsToSave; } }
@@ -23,6 +26,12 @@ public class PlayerData : MonoBehaviour {
 
     public void SaveACat(){
         catsToSave--;
+    }
+
+    public void PowerUp(){
+
+        lifes++;
+        Debug.Log("Lifes: " + Lifes);
     }
 
     public void GameOverPosition(){
