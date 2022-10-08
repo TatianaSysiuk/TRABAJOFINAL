@@ -8,6 +8,8 @@ TagManager:
   - Floor
   - Cat
   - piso
+  - Star
+  - Platform
   layers:
   - Default
   - TransparentFX

@@ -20,33 +20,31 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] Animator playerAnimator;
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
+        Movement();      
+    }
 
-        if (Input.GetKey(KeyCode.D))
-        {
+    private void Movement(){
+        
+        if (Input.GetKey(KeyCode.D)){
             MovePlayer(Vector3.forward);
             if (!IsAnimation("FORWARD")) playerAnimator.SetTrigger("FORWARD");
-            
-
         }
 
 
-        if (Input.GetKey(KeyCode.A))
-        {
+        if (Input.GetKey(KeyCode.A)){
             MovePlayer(Vector3.back); 
             if (!IsAnimation("BACK")) playerAnimator.SetTrigger("BACK");
             
-
         }
 
+        if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+            if (!IsAnimation("IDLE")) playerAnimator.SetTrigger("IDLE");
 
-       if (Input.GetKeyDown(KeyCode.Space) && canJump){
+        if (Input.GetKeyDown(KeyCode.Space) && canJump){
             canJump = false;
             playerDirection += Vector3.up * 50;
         }
-
-        
     }
 
     private bool IsAnimation(string animName)
