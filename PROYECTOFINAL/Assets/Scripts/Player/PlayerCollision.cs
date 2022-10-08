@@ -23,14 +23,9 @@ public class PlayerCollision : MonoBehaviour{
     private void OnCollisionEnter(Collision other) {
         Debug.Log("ENTRANDO EN COLISION CON ->" + other.gameObject.name); 
 
-        switch(other.gameObject.tag){
-            case "Floor": playerMove.CanJump = true;
-            break;
-            case "Cat": SavedACatMessage(other);
-            break;
-            default:
-            break;
-        }
+        if (other.gameObject.CompareTag("Cat"))
+            SavedACatMessage(other);
+        
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -59,7 +54,7 @@ public class PlayerCollision : MonoBehaviour{
     }
 
     private void SavedACatMessage(Collision other){
-        Debug.Log("Gatito salvado!");   //estos mensajes por consola son porque no sabemos usar interfaces aún
+        Debug.Log("Gatito salvado!");
         if (playerData.CatsToSave > 0){
             playerData.SaveACat();
             Destroy(other.gameObject);
