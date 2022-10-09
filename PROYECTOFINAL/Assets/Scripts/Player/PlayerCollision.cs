@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerCollision : MonoBehaviour{
 
@@ -13,23 +14,50 @@ public class PlayerCollision : MonoBehaviour{
 
     private float timer = 0f;
 
+//---------------EVENTOS--------------------
+    public static event Action OnDead;
+    public static event Action<int> OnChangeHP;
+
+    public static event Action<int> OnChangeScore;
+
     private void Start() {
         playerData = GetComponent<PlayerData>();
         playerMove = GetComponent<PlayerMove>();
         playerJump = GetComponent<PlayerJump>();
+
+        PlayerCollision.OnChangeHP?.Invoke(playerData.LifePoints);
+        PlayerCollision.OnChangeScore?.Invoke(GameManager.Score);
     }
 
     private void Update() {       
+        
         timer += Time.deltaTime;
+        if (GameManager.GameOver == false){
+
+            if (playerData.LifePoints <= 0){
+                PlayerCollision.OnDead?.Invoke();
+                
+                Debug.Log("GAME OVER -- SIN VIDA");
+                GameManager.GameOver = true;
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision other) {
         Debug.Log("ENTRANDO EN COLISION CON ->" + other.gameObject.name); 
+        //Debug.Log("tag: " + other.gameObject.tag);
 
-        switch (other.gameObject.tag){
-            case "Cat": SavedACatMessage(other);
+        switch (other.gameObject.tag){  //HACER UN IF
+            case "Cat": SavedACatMessage(other);    //suma 500 puntos
             break;
-            case "Star": ExtraLife(other);
+            case "Water":   PlayerEvents.OnHealCall(other.gameObject.GetComponent<WaterData>().HealPoints);
+                            PlayerCollision.OnChangeHP?.Invoke(playerData.LifePoints);
+                            Destroy(other.gameObject);
+                            Debug.Log(playerData.LifePoints);
+                            GameEvents.OnScoreCall(GameManager.Score);
+                            PlayerCollision.OnChangeScore?.Invoke(300); 
+            break;
+            case "Star": //suma 200 puntos del juego en el game manager
             break;
             case "Platform": playerJump.puedoSaltar = false;
             break;
@@ -73,10 +101,4 @@ public class PlayerCollision : MonoBehaviour{
         Debug.Log("Gatitos a salvar restantes: " + playerData.CatsToSave);
     }
 
-    private void ExtraLife(Collision other){
-
-        Destroy(other.gameObject);
-        if (playerData.Lifes > 0 && playerData.Lifes < 5) 
-            playerData.PowerUp();
-    }
 }

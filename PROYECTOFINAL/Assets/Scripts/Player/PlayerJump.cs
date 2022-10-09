@@ -40,7 +40,7 @@ public class PlayerJump : MonoBehaviour
     
     
     }
-     public void OnCollisionStay(Collision other) {
+    public void OnCollisionStay(Collision other) {
         if (other.gameObject.CompareTag("piso"))
         {
              if (Input.GetKeyDown(KeyCode.Space)){

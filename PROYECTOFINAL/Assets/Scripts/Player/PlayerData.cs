@@ -6,9 +6,6 @@ public class PlayerData : MonoBehaviour {
     [SerializeField] private int lifePoints = 1000;
     public int LifePoints { get { return lifePoints; } }
 
-    [SerializeField] private int lifes = 2;
-    public int Lifes { get { return lifes; } }
-
     private int catsToSave = 4;
     public int CatsToSave { get { return catsToSave; } }
 
@@ -20,6 +17,16 @@ public class PlayerData : MonoBehaviour {
        playerMovement.enabled = true;
     }
 
+    private void OnEnable(){
+        PlayerEvents.OnHeal += PowerUp;
+        PlayerEvents.OnDamage += Damage;
+    }
+
+    private void OnDisable(){
+        PlayerEvents.OnHeal -= PowerUp;
+        PlayerEvents.OnDamage -= Damage;
+    }
+
     public void Damage(int value){
         lifePoints -= value;
     }
@@ -28,10 +35,10 @@ public class PlayerData : MonoBehaviour {
         catsToSave--;
     }
 
-    public void PowerUp(){
+    public void PowerUp(int healPoints){ //healing
 
-        lifes++;
-        Debug.Log("Lifes: " + Lifes);
+        lifePoints += healPoints;
+        Debug.Log("Life Points: " + LifePoints);
     }
 
     public void GameOverPosition(){
