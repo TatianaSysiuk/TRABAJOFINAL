@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerJump : MonoBehaviour
-{
+public class PlayerJump : MonoBehaviour {
 
     public Rigidbody rb;
     public float FuerzaDeSalto = 8f;

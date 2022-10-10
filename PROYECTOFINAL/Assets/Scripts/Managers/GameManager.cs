@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour{
 
     public static GameManager instance;
 
-    private static int score = 100;
+    private static int score = 0;
     public static int Score { get => score; set => score = value; }
     
     public static bool GameOver = false;
@@ -15,9 +15,8 @@ public class GameManager : MonoBehaviour{
 
         if (instance == null){   
             instance = this;
-            score = 0;
             DontDestroyOnLoad(gameObject);
-
+            
             PlayerCollision.OnChangeScore += SetScore;
         }else
             Destroy(gameObject);     

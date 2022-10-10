@@ -72,7 +72,10 @@ public class PlayerCollision : MonoBehaviour{
             
             if (playerData.LifePoints > 0){
                 if (timer >= 1.5f){
-                    playerData.Damage(other.gameObject.GetComponent<FireData>().DamagePoints);
+                    PlayerEvents.OnDamageCall(other.gameObject.GetComponent<FireData>().DamagePoints);
+                    PlayerCollision.OnChangeHP?.Invoke(playerData.LifePoints);
+                    
+                    Debug.Log("New Life Points: " + playerData.LifePoints);
                     timer = 0;
                 }
             }
@@ -93,9 +96,15 @@ public class PlayerCollision : MonoBehaviour{
         
         if (playerData.CatsToSave > 0){
             playerData.SaveACat();
+        
+            PlayerCollision.OnChangeScore?.Invoke(300);
+            if (GameManager.Score == 0)
+                GameEvents.OnScoreCall(300);
+            else
+                GameEvents.OnScoreCall(GameManager.Score);
+
+            
             Destroy(other.gameObject);
-            GameEvents.OnScoreCall(GameManager.Score);
-            PlayerCollision.OnChangeScore?.Invoke(300); 
             Debug.Log("game score: " + GameManager.Score);
         }
         Debug.Log("Gatitos a salvar restantes: " + playerData.CatsToSave);
@@ -105,11 +114,16 @@ public class PlayerCollision : MonoBehaviour{
 
         PlayerEvents.OnHealCall(other.gameObject.GetComponent<WaterData>().HealPoints);
         PlayerCollision.OnChangeHP?.Invoke(playerData.LifePoints);
-        Destroy(other.gameObject);
+    
         Debug.Log("lifepoints: " + playerData.LifePoints);
-                            
-        GameEvents.OnScoreCall(GameManager.Score);
+
         PlayerCollision.OnChangeScore?.Invoke(100); 
+        if (GameManager.Score == 0)
+            GameEvents.OnScoreCall(100);
+        else
+            GameEvents.OnScoreCall(GameManager.Score);                  
+        
+        Destroy(other.gameObject);
         Debug.Log("game score: " + GameManager.Score);
     }
 
@@ -120,10 +134,17 @@ public class PlayerCollision : MonoBehaviour{
 
         //poner posicion en relacion al building
         transform.Translate(0,UnityEngine.Random.Range(-52.8f,10f),UnityEngine.Random.Range(26.8f,32.1f));
-        Destroy(other.gameObject);
-        GameEvents.OnScoreCall(GameManager.Score);
+        
         PlayerCollision.OnChangeScore?.Invoke(200);
+        if (GameManager.Score == 0)
+            GameEvents.OnScoreCall(200);
+        else
+            GameEvents.OnScoreCall(GameManager.Score);
+        
+        
+        Destroy(other.gameObject);
 
         Debug.Log("star reached, points: " + GameManager.Score);
     }
+
 }
