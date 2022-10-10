@@ -10,17 +10,6 @@ public class GameManager : MonoBehaviour{
     public static int Score { get => score; set => score = value; }
     
     public static bool GameOver = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void Awake(){
 
@@ -28,7 +17,20 @@ public class GameManager : MonoBehaviour{
             instance = this;
             score = 0;
             DontDestroyOnLoad(gameObject);
+
+            PlayerCollision.OnChangeScore += SetScore;
         }else
             Destroy(gameObject);     
+    }
+
+    public static void SetScore(int newValue){
+
+        score += newValue;
+        Debug.Log("nuevo valor: " + newValue + "DESDE EL Game Manager "+ score);
+    }
+
+    private void OnDisable(){
+
+        PlayerCollision.OnChangeScore -= SetScore;
     }
 }

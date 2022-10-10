@@ -10,11 +10,7 @@ public class PlayerMove : MonoBehaviour
 
     private bool canJump = true;
     public bool CanJump { get => canJump; set => canJump = value; }
-
-    [SerializeField] private int JumpHeight = 4;
-
-
-    
+  
     private Vector3 playerDirection;
 
     [SerializeField] Animator playerAnimator;

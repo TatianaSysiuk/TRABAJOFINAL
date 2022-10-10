@@ -47,17 +47,12 @@ public class PlayerCollision : MonoBehaviour{
         Debug.Log("ENTRANDO EN COLISION CON ->" + other.gameObject.name); 
         //Debug.Log("tag: " + other.gameObject.tag);
 
-        switch (other.gameObject.tag){  //HACER UN IF
-            case "Cat": SavedACatMessage(other);    //suma 500 puntos
+        switch (other.gameObject.tag){  
+            case "Cat": SavedACatMessage(other);    //suma 300 puntos
             break;
-            case "Water":   PlayerEvents.OnHealCall(other.gameObject.GetComponent<WaterData>().HealPoints);
-                            PlayerCollision.OnChangeHP?.Invoke(playerData.LifePoints);
-                            Destroy(other.gameObject);
-                            Debug.Log(playerData.LifePoints);
-                            GameEvents.OnScoreCall(GameManager.Score);
-                            PlayerCollision.OnChangeScore?.Invoke(300); 
+            case "Water": MoreWaterForTheFirefighter(other);
             break;
-            case "Star": //suma 200 puntos del juego en el game manager
+            case "Star": StarReached(other);//suma 200 puntos del juego en el game manager
             break;
             case "Platform": playerJump.puedoSaltar = false;
             break;
@@ -92,13 +87,43 @@ public class PlayerCollision : MonoBehaviour{
         }
     }
 
-    private void SavedACatMessage(Collision other){
+    private void SavedACatMessage(Collision other){ //add 300 score points
+
         Debug.Log("Gatito salvado!");
+        
         if (playerData.CatsToSave > 0){
             playerData.SaveACat();
             Destroy(other.gameObject);
+            GameEvents.OnScoreCall(GameManager.Score);
+            PlayerCollision.OnChangeScore?.Invoke(300); 
+            Debug.Log("game score: " + GameManager.Score);
         }
         Debug.Log("Gatitos a salvar restantes: " + playerData.CatsToSave);
     }
 
+    private void MoreWaterForTheFirefighter(Collision other){   //add 100 score points
+
+        PlayerEvents.OnHealCall(other.gameObject.GetComponent<WaterData>().HealPoints);
+        PlayerCollision.OnChangeHP?.Invoke(playerData.LifePoints);
+        Destroy(other.gameObject);
+        Debug.Log("lifepoints: " + playerData.LifePoints);
+                            
+        GameEvents.OnScoreCall(GameManager.Score);
+        PlayerCollision.OnChangeScore?.Invoke(100); 
+        Debug.Log("game score: " + GameManager.Score);
+    }
+
+    private void StarReached(Collision other){  
+
+        /*when the player reaches a star, he will 
+        teleport to a random position inside the building*/
+
+        //poner posicion en relacion al building
+        transform.Translate(0,UnityEngine.Random.Range(-52.8f,10f),UnityEngine.Random.Range(26.8f,32.1f));
+        Destroy(other.gameObject);
+        GameEvents.OnScoreCall(GameManager.Score);
+        PlayerCollision.OnChangeScore?.Invoke(200);
+
+        Debug.Log("star reached, points: " + GameManager.Score);
+    }
 }
