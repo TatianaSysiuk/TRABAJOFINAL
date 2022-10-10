@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2586012779548916129}
   - component: {fileID: 1462692957238670852}
   - component: {fileID: 3722348475052835534}
+  - component: {fileID: 7182810769366078777}
   m_Layer: 0
   m_Name: silla
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7182810769366078777
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2929745796038550299}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01572272, y: 0.014342701, z: 0.016997611}
+  m_Center: {x: -0.051558018, y: -0.0002900839, z: 0.010864863}

@@ -507,6 +507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7609332980968908634}
+  - component: {fileID: 6493014053869231603}
   m_Layer: 0
   m_Name: plant
   m_TagString: Untagged
@@ -536,6 +537,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &6493014053869231603
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7120781084196912608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.2196077
+  m_Center: {x: 0.06866138, y: 0, z: 0}
 --- !u!1 &7965439412154596498
 GameObject:
   m_ObjectHideFlags: 0
