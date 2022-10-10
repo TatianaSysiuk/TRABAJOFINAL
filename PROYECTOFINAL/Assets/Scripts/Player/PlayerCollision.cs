@@ -14,6 +14,8 @@ public class PlayerCollision : MonoBehaviour{
 
     private float timer = 0f;
 
+    [SerializeField] private Transform entryTransform;
+
 //---------------EVENTOS--------------------
     public static event Action OnDead;
     public static event Action<int> OnChangeHP;
@@ -64,6 +66,10 @@ public class PlayerCollision : MonoBehaviour{
 
     private void OnTriggerEnter(Collider other) {
         Debug.Log("ENTRANDO EN EL TRIGGER ->" + other.gameObject.name);
+
+        if (other.gameObject.CompareTag("Portal"))
+            transform.Translate(entryTransform.position.x,entryTransform.position.y,entryTransform.position.z);
+        
     }
 
     private void OnTriggerStay(Collider other) {

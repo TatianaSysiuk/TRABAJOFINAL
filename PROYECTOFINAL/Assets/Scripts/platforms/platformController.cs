@@ -14,8 +14,10 @@ public class platformController : MonoBehaviour {
     public bool moveNext = true;
     [SerializeField] [Range(1f,10f)] private float waitTime = 1f;
 
+    private float delayTime = 5f;
+
     private void Update() {
-        Move();
+        Invoke("Move",delayTime);
     }
 
     private void Move(){

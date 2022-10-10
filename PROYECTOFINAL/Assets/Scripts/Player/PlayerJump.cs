@@ -5,23 +5,17 @@ using UnityEngine;
 public class PlayerJump : MonoBehaviour {
 
     public Rigidbody rb;
-    public float FuerzaDeSalto = 8f;
+    [SerializeField] private float FuerzaDeSalto = 15f;
     public bool puedoSaltar;
 
     private Animator anim;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         
         anim = GetComponent<Animator>();
     }
 
-    void FixedUpdate()
-    {
-
-
-    }
 
     // Update is called once per frame
     void Update()
