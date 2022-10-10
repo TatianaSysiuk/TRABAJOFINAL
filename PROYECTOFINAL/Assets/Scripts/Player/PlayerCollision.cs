@@ -134,15 +134,9 @@ public class PlayerCollision : MonoBehaviour{
 
     private void StarReached(Collision other){  
 
-        /*when the player reaches a star, he will 
-        teleport to a random position inside the building*/
-
-        //poner posicion en relacion al building
-        transform.Translate(0,UnityEngine.Random.Range(-52.8f,10f),UnityEngine.Random.Range(26.8f,32.1f));
-        
-        PlayerCollision.OnChangeScore?.Invoke(200);
+        PlayerCollision.OnChangeScore?.Invoke(500);
         if (GameManager.Score == 0)
-            GameEvents.OnScoreCall(200);
+            GameEvents.OnScoreCall(500);
         else
             GameEvents.OnScoreCall(GameManager.Score);
         
