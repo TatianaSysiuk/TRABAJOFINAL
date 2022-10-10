@@ -19,8 +19,8 @@ public class PlayerData : MonoBehaviour {
        playerMovement = GetComponent<PlayerMove>();
        playerMovement.enabled = true;
 
-       playerJump = GetComponent<PlayerJump>();
-       playerJump.enabled = true;
+      /* playerJump = GetComponent<PlayerJump>();
+       playerJump.enabled = true;*/
     }
 
     private void OnEnable(){

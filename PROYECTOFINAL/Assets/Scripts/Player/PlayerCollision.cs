@@ -54,8 +54,7 @@ public class PlayerCollision : MonoBehaviour{
             break;
             case "Star": StarReached(other);//suma 200 puntos del juego en el game manager
             break;
-            case "Platform": playerJump.puedoSaltar = false;
-            break;
+           
             default:
             break;
         }

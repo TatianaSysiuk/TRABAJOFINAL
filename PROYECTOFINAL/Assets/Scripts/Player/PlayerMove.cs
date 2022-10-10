@@ -14,10 +14,16 @@ public class PlayerMove : MonoBehaviour
     private Vector3 playerDirection;
 
     [SerializeField] Animator playerAnimator;
+     public Rigidbody rb;
+    public float FuerzaDeSalto = 8f;
+    public int cantSaltos = 0;
+
+    private Animator anim;
 
     // Update is called once per frame
     void Update(){
         Movement();      
+        Salto();
     }
 
     private void Movement(){
@@ -37,10 +43,10 @@ public class PlayerMove : MonoBehaviour
         if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
             if (!IsAnimation("IDLE")) playerAnimator.SetTrigger("IDLE");
 
-        if (Input.GetKeyDown(KeyCode.Space) && canJump){
+       /* if (Input.GetKeyDown(KeyCode.Space) && canJump){
             canJump = false;
             playerDirection += Vector3.up * 50;
-        }
+        }*/
     }
 
     private bool IsAnimation(string animName)
@@ -51,5 +57,33 @@ public class PlayerMove : MonoBehaviour
     void MovePlayer(Vector3 direction)
     {
         transform.Translate(direction * speed * Time.deltaTime);
+    }
+      public void Salto() {
+        if ( Input.GetKeyDown(KeyCode.Space) && (cantSaltos + 1) <= 2 )
+        { 
+            
+        
+               //  playerAnimator.SetTrigger("JUMP");
+                cantSaltos++;
+                playerAnimator.SetBool("JUMP",true);
+              // playerAnimator.SetTrigger("JUMP");
+        
+                rb.AddForce(new Vector3(0,FuerzaDeSalto,0),ForceMode.Impulse);
+                StartCoroutine(stopAnimJump());
+                if(cantSaltos == 2)
+                {
+                    StartCoroutine(stopJump());
+                }
+        }
+
+    }
+    IEnumerator stopJump() {
+yield return new WaitForSeconds(3f);
+    cantSaltos = 0;
+    }
+    IEnumerator stopAnimJump() {
+        yield return new WaitForSeconds(1f);
+        playerAnimator.SetBool("JUMP",false);
+
     }
 }
