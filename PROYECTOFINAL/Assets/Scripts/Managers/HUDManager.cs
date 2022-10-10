@@ -33,11 +33,13 @@ public class HUDManager : MonoBehaviour{
     public static void SetHPBar(int newValue){
 
         instance.hpBar.value = newValue;
+        Debug.Log("new value: " + newValue + "total: " + instance.hpBar.value);
     }
 
     public static void SetScoreBar(int newValue){
 
         instance.scoreBar.value = newValue;
+        Debug.Log("new value: "+ newValue + "valor en la barra: " + instance.scoreBar.value);
     }
 
     private void GameOver(){
