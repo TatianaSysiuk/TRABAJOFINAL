@@ -12,9 +12,15 @@ public class PlayerData : MonoBehaviour {
     private PlayerMove playerMovement;
     public PlayerMove PlayerMovement { get { return playerMovement; } }
 
+    private PlayerJump playerJump;
+    public PlayerJump PlayerJump { get { return playerJump; } }
+ 
     private void Start() {
        playerMovement = GetComponent<PlayerMove>();
        playerMovement.enabled = true;
+
+       playerJump = GetComponent<PlayerJump>();
+       playerJump.enabled = true;
     }
 
     private void OnEnable(){
@@ -43,5 +49,6 @@ public class PlayerData : MonoBehaviour {
 
     public void GameOverPosition(){
         playerMovement.enabled = false;
+        playerJump.enabled = false;
     }
 }

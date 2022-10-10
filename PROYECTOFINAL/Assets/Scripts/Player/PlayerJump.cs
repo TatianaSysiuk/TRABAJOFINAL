@@ -28,7 +28,7 @@ public class PlayerJump : MonoBehaviour {
     {
         
         
-           if (Input.GetKeyDown(KeyCode.Space)){
+           if (puedoSaltar && Input.GetKeyDown(KeyCode.Space)){
 
                 anim.SetBool("SALTE", true);
                 rb.AddForce(new Vector3(0,FuerzaDeSalto,0),ForceMode.Impulse);
@@ -42,7 +42,7 @@ public class PlayerJump : MonoBehaviour {
     public void OnCollisionStay(Collision other) {
         if (other.gameObject.CompareTag("piso"))
         {
-             if (Input.GetKeyDown(KeyCode.Space)){
+             if (puedoSaltar && Input.GetKeyDown(KeyCode.Space)){
 
                 anim.SetBool("SALTE", true);
                 rb.AddForce(new Vector3(0,FuerzaDeSalto,0),ForceMode.Impulse);
