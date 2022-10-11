@@ -14,6 +14,7 @@ public class HUDManager : MonoBehaviour{
     private PlayerData playerData;
 
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject winPanel;
     // Start is called before the first frame update
  
     private void Awake(){
@@ -23,6 +24,7 @@ public class HUDManager : MonoBehaviour{
             Debug.Log(instance);
 
             PlayerCollision.OnDead += GameOver;
+            PlayerCollision.OnWin += WinGame;
             PlayerCollision.OnChangeHP += SetHPBar;
             GameEvents.OnScore += SetScoreBar;
         }
@@ -48,6 +50,10 @@ public class HUDManager : MonoBehaviour{
         gameOverPanel.SetActive(true);
     }
 
+    private void WinGame(){
+        winPanel.SetActive(true);
+    }
+    
     private void OnDisable(){
 
         PlayerCollision.OnDead -= GameOver;

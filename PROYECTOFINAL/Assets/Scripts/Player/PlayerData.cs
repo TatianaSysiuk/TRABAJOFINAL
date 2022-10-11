@@ -6,7 +6,7 @@ public class PlayerData : MonoBehaviour {
     [SerializeField] private int lifePoints = 1000;
     public int LifePoints { get { return lifePoints; } }
 
-    private int catsToSave = 5;
+    private int catsToSave = 2;
     public int CatsToSave { get { return catsToSave; } }
 
     private PlayerMove playerMovement;

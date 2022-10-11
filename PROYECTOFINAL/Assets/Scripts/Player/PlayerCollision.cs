@@ -18,6 +18,9 @@ public class PlayerCollision : MonoBehaviour{
 
 //---------------EVENTOS--------------------
     public static event Action OnDead;
+
+    public static event Action OnWin;
+
     public static event Action<int> OnChangeHP;
 
     public static event Action<int> OnChangeScore;
@@ -41,6 +44,11 @@ public class PlayerCollision : MonoBehaviour{
                 
                 Debug.Log("GAME OVER -- SIN VIDA");
                 GameManager.GameOver = true;
+            }
+            
+            if (playerData.CatsToSave == 0){
+                PlayerCollision.OnWin?.Invoke();
+                Debug.Log("EL PLAYER HA GANADO EL JUEGO");
             }
         }
     }
