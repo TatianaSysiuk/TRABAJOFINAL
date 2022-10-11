@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -344,8 +344,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Press W/S/A/D keys for move the character forward, back, left and right
-    respectively.'
+  m_text: '- Press A/D keys for move the character back and forward respectively.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f9e19bbbb9d392a498e721a356e36c88, type: 2}
   m_sharedMaterial: {fileID: 3652235503043057480, guid: f9e19bbbb9d392a498e721a356e36c88, type: 2}
@@ -1710,8 +1709,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: '- The objective of the game is to save as many kittens as possible from
-    the fire, taking into account that fire does damage and there is a certain time
-    to pass each level.'
+    the fire, taking into account that fire does damage every 1.5 seconds.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f9e19bbbb9d392a498e721a356e36c88, type: 2}
   m_sharedMaterial: {fileID: 3652235503043057480, guid: f9e19bbbb9d392a498e721a356e36c88, type: 2}
