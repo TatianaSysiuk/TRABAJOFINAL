@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 7146f6e33118deb408436a98305b9fa0
   - enabled: 1
-    path: Assets/Scenes/scene tati.unity
-    guid: 03f69607d2c9f504bbb451ab0b51d543
+    path: Assets/Scenes/scene_tati.unity
+    guid: aa4bec9f4fc0d5a41b4055a2f30239f1
   m_configObjects: {}
