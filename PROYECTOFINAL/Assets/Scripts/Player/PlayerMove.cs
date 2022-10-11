@@ -78,8 +78,8 @@ public class PlayerMove : MonoBehaviour
 
     }
     IEnumerator stopJump() {
-yield return new WaitForSeconds(3f);
-    cantSaltos = 0;
+        yield return new WaitForSeconds(3f);
+        cantSaltos = 0;
     }
     IEnumerator stopAnimJump() {
         yield return new WaitForSeconds(1f);

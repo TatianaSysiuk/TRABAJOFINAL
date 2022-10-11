@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12942624, g: 0.147129, b: 0.17989439, a: 1}
+  m_IndirectSpecularColor: {r: 0.16262051, g: 0.18408662, b: 0.22492, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6963,6 +6963,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bombero
       objectReference: {fileID: 0}
+    - target: {fileID: 7865744600987304204, guid: 3eba1b2c6a761fb4fa96c74312c96713, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7865744600987344172, guid: 3eba1b2c6a761fb4fa96c74312c96713, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -8445,7 +8449,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.5399568, y: 1}
+    m_SensorSize: {x: 2.1213872, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -19849,6 +19853,11 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!4 &1707102655 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 456090108936284203, guid: 70e70c3411b80ff4898ad679c3fe92da, type: 3}
+  m_PrefabInstance: {fileID: 1302879737}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1708561273
 GameObject:
   m_ObjectHideFlags: 0
@@ -21804,6 +21813,7 @@ MonoBehaviour:
   hpBar: {fileID: 1859099369}
   scoreBar: {fileID: 1597133478}
   gameOverPanel: {fileID: 1972689095}
+  winPanel: {fileID: 1560023215}
 --- !u!1 &1833691464 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6999241672332836081, guid: dd08e491e37165c46bbbcd6c6e639d5c, type: 3}
@@ -24613,7 +24623,7 @@ Rigidbody:
   m_GameObject: {fileID: 2016145409}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.5
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -24664,7 +24674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a297a0250f2c6b44e96f014cce6d94ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entryTransform: {fileID: 0}
+  entryTransform: {fileID: 1707102655}
 --- !u!114 &2016145420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24680,7 +24690,7 @@ MonoBehaviour:
   speed: 3
   playerAnimator: {fileID: 2016145412}
   rb: {fileID: 2016145413}
-  FuerzaDeSalto: 12
+  FuerzaDeSalto: 10
   cantSaltos: 0
 --- !u!1 &2017557720
 GameObject:
@@ -26713,6 +26723,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2042299387}
     m_Modifications:
+    - target: {fileID: 456090108936284206, guid: 70e70c3411b80ff4898ad679c3fe92da, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 456090108936284207, guid: 70e70c3411b80ff4898ad679c3fe92da, type: 3}
+      propertyPath: m_TagString
+      value: Portal
+      objectReference: {fileID: 0}
     - target: {fileID: 2078412799707923088, guid: 70e70c3411b80ff4898ad679c3fe92da, type: 3}
       propertyPath: m_RootOrder
       value: 16

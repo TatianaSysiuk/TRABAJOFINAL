@@ -49,6 +49,7 @@ public class PlayerCollision : MonoBehaviour{
             if (playerData.CatsToSave == 0){
                 PlayerCollision.OnWin?.Invoke();
                 Debug.Log("EL PLAYER HA GANADO EL JUEGO");
+                playerData.WinOrLosePosition();
             }
         }
     }
@@ -62,9 +63,8 @@ public class PlayerCollision : MonoBehaviour{
             break;
             case "Water": MoreWaterForTheFirefighter(other);
             break;
-            case "Star": StarReached(other);//suma 200 puntos del juego en el game manager
+            case "Star": StarReached(other);//suma 500 puntos del juego en el game manager
             break;
-           
             default:
             break;
         }
@@ -97,7 +97,7 @@ public class PlayerCollision : MonoBehaviour{
                 if (gameOverMessage == false){
                     Debug.Log("GAME OVER");
                     gameOverMessage = true;
-                    playerData.GameOverPosition();
+                    playerData.WinOrLosePosition();
                 }
             }     
         }
@@ -120,6 +120,7 @@ public class PlayerCollision : MonoBehaviour{
             Destroy(other.gameObject);
             Debug.Log("game score: " + GameManager.Score);
         }
+                  
         Debug.Log("Gatitos a salvar restantes: " + playerData.CatsToSave);
     }
 

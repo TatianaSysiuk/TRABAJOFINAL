@@ -6,7 +6,7 @@ public class PlayerData : MonoBehaviour {
     [SerializeField] private int lifePoints = 1000;
     public int LifePoints { get { return lifePoints; } }
 
-    private int catsToSave = 2;
+    private int catsToSave = 5;
     public int CatsToSave { get { return catsToSave; } }
 
     private PlayerMove playerMovement;
@@ -16,11 +16,14 @@ public class PlayerData : MonoBehaviour {
     public PlayerJump PlayerJump { get { return playerJump; } }
  
     private void Start() {
-       playerMovement = GetComponent<PlayerMove>();
-       playerMovement.enabled = true;
+        
+        playerMovement = GetComponent<PlayerMove>();
+        if (playerMovement!=null)
+            playerMovement.enabled = true;
 
-      /* playerJump = GetComponent<PlayerJump>();
-       playerJump.enabled = true;*/
+        playerJump = GetComponent<PlayerJump>();
+        if (playerJump!=null)
+            playerJump.enabled = true;
     }
 
     private void OnEnable(){
@@ -47,7 +50,7 @@ public class PlayerData : MonoBehaviour {
         Debug.Log("Life Points: " + LifePoints);
     }
 
-    public void GameOverPosition(){
+    public void WinOrLosePosition(){
         playerMovement.enabled = false;
         playerJump.enabled = false;
     }
